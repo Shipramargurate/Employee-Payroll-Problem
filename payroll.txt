@@ -56,3 +56,16 @@ mysql> insert into employee_payroll(name,salary, start) values
     -> ('Shipra', 35000.00, ' 20-08-13');
 Query OK, 3 rows affected, 3 warnings (0.23 sec)
 Records: 3  Duplicates: 0  Warnings: 3
+
+UC4--->> Ability to retrieve all the employee payroll data that is added to payroll service database
+
+
+mysql> select * from employee_payroll;
++----+--------+--------+------------+
+| id | name   | salary | start      |
++----+--------+--------+------------+
+|  1 | Reema  |  35000 | 2020-08-15 |
+|  2 | Swayam |  35000 | 2020-08-14 |
+|  3 | Shipra |  35000 | 2020-08-13 |
++----+--------+--------+------------+
+3 rows in set (0.00 sec)
