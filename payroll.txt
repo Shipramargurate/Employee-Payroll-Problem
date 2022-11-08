@@ -1,0 +1,28 @@
+UC1--->> Ability to create a payroll service database
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| payroll            |
+| payroll_service    |
+| performance_schema |
+| sakila             |
+| student_info       |
+| sys                |
+| world              |
++--------------------+
+9 rows in set (0.18 sec)
+
+mysql> use payroll_Service;
+Database changed
+mysql> select database();
++-----------------+
+| database()      |
++-----------------+
+| payroll_service |
++-----------------+
+1 row in set (0.00 sec)
+
