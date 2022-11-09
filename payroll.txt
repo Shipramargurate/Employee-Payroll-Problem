@@ -100,3 +100,39 @@ mysql> select * from employee_payroll
 |  3 | Shipra |  35000 | 2020-08-13 |
 +----+--------+--------+------------+
 3 rows in set (0.05 sec)
+
+UC6--->>>> Ability to add Gender to Employee Payroll Table and Update the Rows to reflect the correct Employee Gender
+
+mysql> Alter table employee_payroll Add gender char(1) After name;
+Query OK, 0 rows affected (2.70 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc employee_payroll;
++--------+--------------+------+-----+---------+----------------+
+| Field  | Type         | Null | Key | Default | Extra          |
++--------+--------------+------+-----+---------+----------------+
+| id     | int          | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(150) | NO   |     | NULL    |                |
+| gender | char(1)      | YES  |     | NULL    |                |
+| salary | double       | NO   |     | NULL    |                |
+| start  | date         | NO   |     | NULL    |                |
++--------+--------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> update employee_payroll set gender = 'M' where name = 'Swayam';
+Query OK, 1 row affected (0.12 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll set gender = 'F' where name = 'Shipra' or name = 'Reema';
+Query OK, 2 rows affected (0.06 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select * from employee_payroll;
++----+--------+--------+--------+------------+
+| id | name   | gender | salary | start      |
++----+--------+--------+--------+------------+
+|  1 | Reema  | F      |  35000 | 2020-08-15 |
+|  2 | Swayam | M      |  35000 | 2020-08-14 |
+|  3 | Shipra | F      |  35000 | 2020-08-13 |
++----+--------+--------+--------+------------+
+3 rows in set (0.00 sec)
